@@ -1,0 +1,71 @@
+\documentclass[a4paper,12pt]{article}
+
+% Mise en page
+\usepackage[top=1cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+% Encodage
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% Packages pour les maths
+\usepackage{amsmath, amssymb, amsthm}
+
+% Pour les algorithmes et code
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Pour les graphiques et diagrammes
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+% Pour les hyperliens
+\usepackage{hyperref}
+
+% Définir des couleurs pour le code
+\definecolor{codebg}{rgb}{0.95,0.95,0.95}
+\definecolor{keywordcolor}{rgb}{0.0,0.0,0.6}
+\definecolor{commentcolor}{rgb}{0.0,0.5,0.0}
+
+% Configuration du style de code (ici pour OCaml)
+\lstdefinestyle{ocaml}{
+    language=ML,
+    backgroundcolor=\color{white},
+    keywordstyle=\color{keywordcolor}\bfseries,
+    commentstyle=\color{commentcolor}\itshape,
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    frame=false,
+    breaklines=true,
+    showspaces=false,
+    showstringspaces=false,
+    tabsize=2
+}
+
+\begin{document}
+\begin{center}
+\Large\textbf{Branch and bound algorithm for \textsc{Knapsack}}
+\end{center}
+
+\section*{Introduction}
+We will focus on the optimisation problem of the knapsack, recalled below. We will implement in \textsc{OCaml} several algorithms to solve this problem:
+\begin{itemize}
+    \item an exhaustive enumeration algorithm (section 2),
+    \item a dynamic programming algorithm (section 3),
+    \item a Branch-and-Bound algorithm (section 7).
+\end{itemize}
+
+\section*{\textsc{Knapsack}}
+
+The \textsc{Knapsack} problem is defined by:
+    
+\medskip
+    
+\textbf{Input :} An integer $n \in \mathbb{N}$, two finite sequences $(p_i)_{i \in [1,n]} \in \mathbb{N}^n$ and $(v_i)_{i \in [1,n]} \in \mathbb{N}^n$, an integer $P \in \mathbb{N}$ and a threshold $K \in \mathbb{N}$.
+    
+\textbf{Output :} Exists an $I \subseteq [1,n]$ such that $\sum_{i \in I} p_i \leq P$ et $\sum_{i \in I} v_i \geq K$ ?
+    
+\end{document}
